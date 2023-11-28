@@ -1,0 +1,5 @@
+shift ctrl up/down
+ctrl alt l реформат коду
+ctrl j усі templates
+sh alt  click/ ctrl ctrl up/down писати в декільркох рядках
+sh f6 змінити назву змінної всюди
