@@ -7,12 +7,16 @@ for (let i = 0; i < 10; i++) {
     document.write(`<div> number ${i} </div>`)
 }
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
-for (let i = 0; i < 10; i++) {
-    document.write('<h1>Error </h1>')
+    let i = 0;
+    while (i<20){
+        i++
+        document.write('<h1>Error </h1>')
 }
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
-for (let i = 0; i < 10; i++) {
-    document.write(`<h1>Error ${i} </h1>`)
+    let i1 = 0;
+    while (i1<20) {
+        i1++
+        document.write(`<h1>Error ${i1} </h1>`)
 }
 // - Використовуючи данні з масиву, за допомоги document.write та циклу
 // побудувати структуру по шаблону
