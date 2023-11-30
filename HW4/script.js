@@ -1,26 +1,29 @@
+let ReginaRaut = [878,'SitaCeng',491, true, false, 1235, 'YusufNayak']
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
 
 function area_of_rectangl(a) {
     let area = a*6;
-    document.write(area)
+    document.write(`<div>${area}</div>`)
     return area;
 }
-console.log(area_of_rectangl(12))
+area_of_rectangl(12)
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 function area_of_circle(r){
     let R = r;
     let area = R * R * Math.PI;
+    document.write(`<div>${area}</div>`)
     return area;
 }
-console.log(area_of_circle(11));
+area_of_circle(11);
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
 function area_of_cilindre(h, r){
     let area = (2 * Math.PI * r * h) + (2 * Math.PI * r * r);
+    document.write(`<div>${area}</div>`)
     return area;
 }
-console.log(area_of_cilindre(12, 4));
+area_of_cilindre(12, 4);
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
 function iterator (arr){
@@ -28,7 +31,7 @@ function iterator (arr){
         document.write(arrElement);
     }
 }
-
+iterator(ReginaRaut)
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
 function par(text){
     document.write(`<p> ${text} </p>`)
@@ -64,7 +67,7 @@ function ul_builder(arr){
         }
     document.write('</ul>');
 }
-let ReginaRaut = [878,'SitaCeng',491, true, false, 1235, 'YusufNayak']
+
 ul_builder(ReginaRaut);
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
@@ -108,10 +111,9 @@ sum(PingZhong)
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 function swap(arr,i1,i2){
-    let reserv = 0;
-    reserv = arr[i1]
+    let reserved = arr[i1]
     arr[i1] = arr[i2]
-    arr[i2] = reserv
+    arr[i2] = reserved
     document.write(arr)
 }
 let SalehBao =[11,22,33,44];
