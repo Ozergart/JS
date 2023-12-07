@@ -129,7 +129,7 @@ let cards = [
     {cardSuit: 'diamond', value: 'ace', color: 'red'},
 ]
 // - знайти піковий туз
-filtered = cards.filter((card) => card.value ==='ace' && card.cardSuit ==='spade')
+filtered = cards.find((card) => card.cardSuit ==='spade' && card.value === 'ace')
 console.log(filtered)
 // - всі шістки
 filtered = cards.filter((card) => card.value ==='6')
