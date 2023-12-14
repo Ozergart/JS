@@ -37,7 +37,6 @@ console.log(str1.split(' '));
 
 // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
 let arr = [10,8,-7,55,987,-1011,0,1050,0];
-let arrs = [];
 arrs = arr.map(value =>{
     return value + ''
 })
@@ -74,11 +73,9 @@ sorted = coursesAndDurationArray.sort((a,b) => {
 })
 // console.log(sorted);
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
-let filtered = [];
 filtered = coursesAndDurationArray.filter((course) => course.monthDuration > 5)
 console.log(filtered)
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
-let mapped = [];
 mapped = coursesAndDurationArray.map((value, index) => {
     value.id = index
     return value
