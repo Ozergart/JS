@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<div id="SessionBlock"></div>
+<script>
+    let SessionBlock = document.getElementById('SessionBlock')
+    let sessions2 = JSON.parse(localStorage.getItem('sessions'));
+    sessions2.forEach(session => {
+        let sessionElement = document.createElement('p');
+        sessionElement.innerText = session;
+        SessionBlock.appendChild(sessionElement);
+    })
+</script>
+</body>
+</html>
