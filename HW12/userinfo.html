@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="info"></div>
+<script>
+    let info = document.getElementById('info')
+    let url = new URL(location.href);
+    let id = url.searchParams.get('id');
+    console.log(id);
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+        .then(response => response.json())
+        .then(user => {
+            for (let key in user) {
+                    let userKey = user[key];
+                    let p = document.createElement('p');
+                    p.textContent = `${key}: ${userKey}`;
+                    info.appendChild(p);
+            }
+        })
+</script>
+</body>
+</html>
