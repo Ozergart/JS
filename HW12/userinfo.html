@@ -15,7 +15,7 @@
         .then(response => response.json())
         .then(user => {
             for (let key in user) {
-                    let userKey = user[key];
+                    let userKey = JSON.stringify(user[key]);
                     let p = document.createElement('p');
                     p.textContent = `${key}: ${userKey}`;
                     info.appendChild(p);
