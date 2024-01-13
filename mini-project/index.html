@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="AllUsers"></div>
+
+<script>
+    let AllUsers = document.getElementById('AllUsers')
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response=>response.json())
+    .then(users=>{
+        for (const user of users) {
+
+            let UserDiv = document.createElement('div')
+            AllUsers.appendChild(UserDiv)
+            UserDiv.classList.add('user')
+
+            let p = document.createElement('p')
+            p.innerText = user.id + ':' + user.name
+            UserDiv.appendChild(p)
+
+            let button = document.createElement('a')
+            UserDiv.appendChild(button)
+            button.classList.add('link')
+            button.innerText='more'
+            button.href = 'user-details.html?UserId=' + user.id
+        }
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="postInfo"></div>
+<!--<button id="comments"></button>-->
+<h3>Comments</h3>
+<div id="commentsDiv"></div>
+<script>
+let postInfo = document.getElementById('postInfo')
+let url = new URL(location.href)
+let postID = url.searchParams.get('PostId')
+
+function objectIterator(post){
+    for (const postKey in post) {
+        if (typeof post[postKey] === 'object'){
+            objectIterator(post[postKey])
+        }
+        else {
+            let p = document.createElement('p')
+            postInfo.appendChild(p)
+            p.innerText =`${postKey} : ${post[postKey]}`
+        }
+    }
+}
+fetch('https://jsonplaceholder.typicode.com/posts/'+postID)
+.then(response=>response.json())
+.then(post=>objectIterator(post))
+// let comments = document.getElementById('comments')
+let commentsDiv = document.getElementById('commentsDiv')
+// comments.addEventListener('click',function () {
+//     commentsDiv.style.display = 'flex'
+// })
+fetch(`https://jsonplaceholder.typicode.com/posts/${postID}/comments`)
+.then(response=>response.json())
+.then(allComments=>{
+    for (const Comment of allComments) {
+        let div = document.createElement('div')
+        div.classList.add('comment')
+        commentsDiv.appendChild(div)
+
+        let p1 = document.createElement('span')
+        p1.innerText = `email : ${Comment.email}`
+        div.appendChild(p1)
+
+
+        let p2 = document.createElement('span')
+        p2.innerText = `name : ${Comment.name}`
+        div.appendChild(p2)
+
+
+        let p3 = document.createElement('span')
+        p3.innerText = `Comment : ${Comment.body}`
+        div.appendChild(p3)
+    }
+})
+</script>
+</body>
+</html>
