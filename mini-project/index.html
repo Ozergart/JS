@@ -20,8 +20,12 @@
             UserDiv.classList.add('user')
 
             let p = document.createElement('p')
-            p.innerText = user.id + ':' + user.name
+            p.innerText = `id : ${user.id}`
             UserDiv.appendChild(p)
+
+            let p2 = document.createElement('p2')
+            p2.innerText = `name : ${user.name}`
+            UserDiv.appendChild(p2)
 
             let button = document.createElement('a')
             UserDiv.appendChild(button)
