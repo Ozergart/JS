@@ -20,18 +20,18 @@
             UserDiv.classList.add('user')
 
             let p = document.createElement('p')
-            p.innerText = `id : ${user.id}`
+            p.innerText = `Id : ${user.id}`
             UserDiv.appendChild(p)
 
             let p2 = document.createElement('p2')
-            p2.innerText = `name : ${user.name}`
+            p2.innerText = `Ім'я : ${user.name}`
             UserDiv.appendChild(p2)
 
-            let button = document.createElement('a')
-            UserDiv.appendChild(button)
-            button.classList.add('link')
-            button.innerText='more'
-            button.href = 'user-details.html?UserId=' + user.id
+            let a = document.createElement('a')
+            UserDiv.appendChild(a)
+            a.classList.add('link')
+            a.innerText='more'
+            a.href = 'user-details.html?UserId=' + user.id
         }
     })
 

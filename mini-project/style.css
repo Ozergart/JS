@@ -3,25 +3,31 @@ body{
 }
 .link{
     color: black;
+    text-decoration: none;
     background-color: rgba(255, 0, 0, 0.44);
     height: 40px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
+    box-sizing: border-box;
+    border: solid 1px black;
 }
 .user{
     width: 46%;
     height: 130px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
+    padding: 10px;
     margin: 2%;
     background-color: white;
     box-sizing: border-box;
     border: solid 1px black;
+}
+.user>p{
+    margin: 0;
 }
 #AllUsers{
     width: 700px;
@@ -59,7 +65,7 @@ body{
     border: 4px solid black;
     box-sizing: border-box;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     background-color: white;
     flex-direction: column;
     height: 150px;
@@ -95,7 +101,9 @@ h3{
 .postLinks{
     width: 100%;
     height: 40px;
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.44);
+    box-sizing: border-box;
+    border: solid 1px black;
 }
 .space{
     padding-left: 70px;
