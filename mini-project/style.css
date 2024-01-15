@@ -59,8 +59,10 @@ body{
     border: 4px solid black;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     background-color: white;
+    flex-direction: column;
+    height: 150px;
 
 }
 #commentsDiv{
@@ -89,6 +91,11 @@ body{
 }
 h3{
     margin-left: 2.5%;
+}
+.postLinks{
+    width: 100%;
+    height: 40px;
+    background-color: red;
 }
 .space{
     padding-left: 70px;

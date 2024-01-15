@@ -60,15 +60,21 @@
         .then(response=>response.json())
         .then(postsOfUser=>{
             for (const post of postsOfUser) {
-                    let div = document.createElement('div')
+                let div = document.createElement('div')
                 div.classList.add('postDiv')
-                    posts.appendChild(div)
-                    let a = document.createElement('a')
-                    a.innerText = post.title
-                    div.appendChild(a)
-                    a.href = 'post-details.html?PostId='+post.id
-                    a.style.color='black'
-                    a.style.textDecoration = 'none'
+                posts.appendChild(div)
+
+                let p = document.createElement('p')
+                p.innerText = post.title
+                div.appendChild(p)
+
+                let links = document.createElement('button')
+                links.innerText = 'more info'
+                links.classList.add('postLinks')
+                links.addEventListener('click', function() {
+                    window.location = 'post-details.html?PostId='+post.id
+                } )
+                div.appendChild(links)
             }
     })
 </script>
