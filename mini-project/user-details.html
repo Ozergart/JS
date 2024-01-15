@@ -15,10 +15,30 @@
     let url = new URL(location.href)
     let UserId = url.searchParams.get('UserId')
     let info = document.getElementById('info')
+    function objectIterator_space(user, space = 'space'){
+        for (const userKey in user) {
+            if (typeof user[userKey] === 'object') {
+                let p = document.createElement('p')
+                info.appendChild(p)
+                p.classList.add('space')
+                p.innerText =`${userKey} : `
+                objectIterator_space(user[userKey],'doubleSpace')
+            }
+            else {
+                let p = document.createElement('p')
+                p.classList.add(space)
+                info.appendChild(p)
+                p.innerText =`${userKey} : ${user[userKey]}`
+            }
+            }
+    }
     function objectIterator(user){
         for (const userKey in user) {
             if (typeof user[userKey] === 'object'){
-                objectIterator(user[userKey])
+                let p = document.createElement('p')
+                info.appendChild(p)
+                p.innerText =`${userKey} : `
+                objectIterator_space(user[userKey])
             }
             else {
                 let p = document.createElement('p')

@@ -90,3 +90,9 @@ body{
 h3{
     margin-left: 2.5%;
 }
+.space{
+    padding-left: 70px;
+}
+.doubleSpace{
+    padding-left: 130px;
+}
