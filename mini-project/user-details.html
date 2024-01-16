@@ -12,38 +12,38 @@
 <button id="posts_of_current_user">posts of curent user</button>
 <div id="posts"></div>
 <script>
-    let url = new URL(location.href)
-    let UserId = url.searchParams.get('UserId')
-    let info = document.getElementById('info')
+    let url = new URL(location.href);
+    let UserId = url.searchParams.get('UserId');
+    let info = document.getElementById('info');
     function objectIterator_space(user, space = 'space'){
         for (const userKey in user) {
             if (typeof user[userKey] === 'object') {
-                let p = document.createElement('p')
-                info.appendChild(p)
-                p.classList.add('space')
-                p.innerText =`${userKey} : `
-                objectIterator_space(user[userKey],'doubleSpace')
+                let p = document.createElement('p');
+                info.appendChild(p);
+                p.classList.add('space');
+                p.innerText =`${userKey} : `;
+                objectIterator_space(user[userKey],'doubleSpace');
             }
             else {
-                let p = document.createElement('p')
-                p.classList.add(space)
-                info.appendChild(p)
-                p.innerText =`${userKey} : ${user[userKey]}`
+                let p = document.createElement('p');
+                p.classList.add(space);
+                info.appendChild(p);
+                p.innerText =`${userKey} : ${user[userKey]}`;
             }
             }
     }
     function objectIterator(user){
         for (const userKey in user) {
             if (typeof user[userKey] === 'object'){
-                let p = document.createElement('p')
-                info.appendChild(p)
-                p.innerText =`${userKey} : `
-                objectIterator_space(user[userKey])
+                let p = document.createElement('p');
+                info.appendChild(p);
+                p.innerText =`${userKey} : `;
+                objectIterator_space(user[userKey]);
             }
             else {
-                let p = document.createElement('p')
-                info.appendChild(p)
-                p.innerText =`${userKey} : ${user[userKey]}`
+                let p = document.createElement('p');
+                info.appendChild(p);
+                p.innerText =`${userKey} : ${user[userKey]}`;
             }
         }
     }
@@ -51,30 +51,30 @@
         .then(response=>response.json())
         .then(user=>objectIterator(user))
 
-    let button = document.getElementById('posts_of_current_user')
-    let posts = document.getElementById('posts')
+    let button = document.getElementById('posts_of_current_user');
+    let posts = document.getElementById('posts');
     button.addEventListener('click', function () {
-        posts.style.display = 'flex'
+        posts.style.display = 'flex';
     } )
     fetch('https://jsonplaceholder.typicode.com/users/'+UserId+'/posts')
         .then(response=>response.json())
         .then(postsOfUser=>{
             for (const post of postsOfUser) {
-                let div = document.createElement('div')
-                div.classList.add('postDiv')
-                posts.appendChild(div)
+                let div = document.createElement('div');
+                div.classList.add('postDiv');
+                posts.appendChild(div);
 
-                let p = document.createElement('p')
-                p.innerText = post.title
-                div.appendChild(p)
+                let p = document.createElement('p');
+                p.innerText = post.title;
+                div.appendChild(p);
 
-                let links = document.createElement('button')
-                links.innerText = 'more info'
-                links.classList.add('postLinks')
+                let links = document.createElement('button');
+                links.innerText = 'more info';
+                links.classList.add('postLinks');
                 links.addEventListener('click', function() {
-                    window.location = 'post-details.html?PostId='+post.id
+                    window.location = 'post-details.html?PostId='+post.id;
                 } )
-                div.appendChild(links)
+                div.appendChild(links);
             }
     })
 </script>
